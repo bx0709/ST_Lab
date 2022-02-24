@@ -1,0 +1,23 @@
+@startuml Use Case UML Diagram
+left to right direction
+skinparam packageStyle rectangle
+actor User as u
+
+package Interpreter {
+  usecase "Lexical Analysys" as LA
+  usecase "Syntax Analysis" as SYA
+  usecase "Semantic Analysis" as SMA
+  usecase "Program Evaluation" as PE
+  usecase "Syntax Error" as SYE
+  usecase "Check Symbol table" as ST
+  usecase "Semantic Error" as SME
+  (SYA) .> (LA) : include
+  (SMA) .> (SYA) : include
+  (PE) .> (SMA) : include
+  (SMA) .> (ST) : include
+  (SYE) .> (SYA) : extend
+  (SME) .> (SMA) : extend
+
+}
+u --> LA
+@enduml
