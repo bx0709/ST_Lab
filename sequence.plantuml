@@ -1,0 +1,35 @@
+@startuml Sequence UML Diagram
+actor User
+
+'1 ******************'
+User -> "Lexer": Feeding the source code
+activate "Lexer" 
+
+"Lexer" -> "Parser": Source code broken down into tokens
+activate "Parser"
+
+alt No Syntax Error
+  "Parser" -> "Semantic Analyzer": Tokens represented as Abstract Syntax Trees
+  activate "Semantic Analyzer"
+  
+  alt No semantic Error
+    "Semantic Analyzer" -> "Executor": Abstract Syntax Trees Fed to Executor Unit
+    activate "Executor"
+    "Executor" -->"Semantic Analyzer": Result
+    deactivate Executor
+    "Semantic Analyzer" -> "Parser": Result
+    "Parser" -> "Lexer": Result
+  else 
+    "Semantic Analyzer" -> "Parser": Semantic error in the code
+    deactivate "Semantic Analyzer"
+      "Parse" -> "Lexer": Semantic Error in the code
+  end
+  
+  "Parser" -> "Lexer": Syntax error in the codee
+deactivate "Parser"
+else 
+    "Parser" -> "Lexer": Syntax Error in the code
+end
+
+deactivate "Lexer"
+@enduml
