@@ -25,9 +25,12 @@
 The main purpose of a compiler or an interpreter is to translate a source program written in a high-level source language to machine language. The difference between a compiler and an interpreter is that a compiler generates object code written in the machine language and the interpreter executes the instructions directly.
 
 <p align = "center">
-<img src = "https://github.com/bansaljas/DeCipher/blob/master/Images/CompilervsInterpreter.png" alt = "-" width = "600" height = "400">
+<img src = "https://github.com/bx0709/ST_Lab/blob/main/Sequence%20Diagram.png" alt = "-" width = "600" height = "400">
 </p>
 
+<p align = "center">
+<img src = "https://github.com/bx0709/ST_Lab/blob/main/Use%20Case%20Diagram.png" alt = "-" width = "600" height = "400">
+</p>
 
 <ins>**MOTIVATION:**</ins>
 
